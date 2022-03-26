@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// ユーザー認証系（メール認証機能を有効）
+Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
