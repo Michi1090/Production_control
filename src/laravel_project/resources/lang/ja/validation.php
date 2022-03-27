@@ -79,7 +79,7 @@ return [
     'max' => [
         'numeric' => ':attributeは:max以下で入力してください。',
         'file' => ':attributeは:max KB以下のファイルを選択してください。',
-        'string' => ':attributeは:max文字以下入力してください。',
+        'string' => ':attributeは:max文字以下で入力してください。',
         'array' => ':attributeは:max個以下にしてください。',
     ],
     'mimes' => ':attributeは:values形式で選択してください。',
@@ -112,7 +112,7 @@ return [
     'starts_with' => ':attributeを:valuesから始まるよう入力してください。',
     'string' => ':attributeは門司で入力してください。',
     'timezone' => ':attributeを正しいタイムゾーンで入力してください。',
-    'unique' => ':attributeは既に取得されているため、違うものを入力してください。',
+    'unique' => ':attributeは既に使用されているため、違うものを入力してください。',
     'uploaded' => ':attributeはアップロードに失敗しました。',
     'url' => ':attributeを正しいURLで入力してください。',
     'uuid' => ':attributeを正しいUUIDで入力してください。',
@@ -147,6 +147,7 @@ return [
     */
 
     'attributes' => [
+        'name' => 'ユーザー名',
         'email' => 'メールアドレス',
         'password' => 'パスワード',
     ],
