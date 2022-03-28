@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // ユーザー認証系（メール認証機能を有効）
 Auth::routes(['verify' => true]);
 
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+// インデックス（メニュー）ページ
+Route::get('/', 'HomeController@index')->name('index')->middleware('verified');
