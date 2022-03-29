@@ -5,16 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                <div class="card-header text-center">ホームメニュー</div>
+                    <div class="card-body">
+                        
+                        <!-- メニュー一覧 -->
+                        <div class="list-group">
+                            @foreach ($menus as $menu)
+                                <a class="list-group-item list-group-item-action text-primary" href="{{ $menu['url'] }}">{{ $menu['title'] }}</a>
+                            @endforeach
                         </div>
-                    @endif
 
-                    You are logged in!
+                    </div>
                 </div>
             </div>
         </div>
