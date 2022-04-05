@@ -15,7 +15,13 @@ class CreateProductMastersTable extends Migration
     {
         Schema::create('product_masters', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->bigInteger('engine_id');
+            $table->bigInteger('engine_per');
+            $table->bigInteger('airbag_id');
+            $table->bigInteger('airbag_per');
+            $table->bigInteger('tire_id');
+            $table->bigInteger('tire_per');
         });
     }
 
