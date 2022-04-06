@@ -13,7 +13,7 @@ class ProductMasterSeeder extends Seeder
      */
     public function run()
     {
-        $product_masters = [
+        $products = [
             [
                 'name' => 'セダン',
                 'engine_id' => 1,
@@ -61,6 +61,6 @@ class ProductMasterSeeder extends Seeder
             ],
         ];
 
-        DB::table('product_masters')->insert($product_masters);
+        DB::table('product_masters')->insert($products);
     }
 }
