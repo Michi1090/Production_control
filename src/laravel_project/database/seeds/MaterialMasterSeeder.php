@@ -40,13 +40,13 @@ class MaterialMasterSeeder extends Seeder
                 'price' => 200000,
             ],
             [
-                'name' => 'エアバッグ ノーマル',
+                'name' => 'エアバッグ ハイグレード',
                 'type_id' => MaterialType::AIRBAG,
                 'supplier_id' => MaterialSupplier::Laravel,
                 'price' => 100000,
             ],
             [
-                'name' => 'エアバッグ ハイグレード',
+                'name' => 'エアバッグ ノーマル',
                 'type_id' => MaterialType::AIRBAG,
                 'supplier_id' => MaterialSupplier::Laravel,
                 'price' => 70000,
@@ -58,7 +58,7 @@ class MaterialMasterSeeder extends Seeder
                 'price' => 50000,
             ],
             [
-                'name' => 'タイヤ 16インチ',
+                'name' => 'タイヤ 15インチ',
                 'type_id' => MaterialType::TIRE,
                 'supplier_id' => MaterialSupplier::Symfony,
                 'price' => 40000,
