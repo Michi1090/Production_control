@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMaterialMastersTable extends Migration
+class CreateMaterialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMaterialMastersTable extends Migration
      */
     public function up()
     {
-        Schema::create('material_masters', function (Blueprint $table) {
+        Schema::create('materials', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->bigInteger('type_id');
@@ -29,6 +29,6 @@ class CreateMaterialMastersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('material_masters');
+        Schema::dropIfExists('materials');
     }
 }

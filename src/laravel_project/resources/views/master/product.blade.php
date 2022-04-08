@@ -5,10 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">{{ $product->name }}</div>
+                <div class="card-header text-center">製品マスタ照会</div>
                     <div class="card-body">
 
-                        <!-- メニュー一覧 -->
+                        <!-- 製品マスタ画面 -->
+                        <h4 class="text-center my-3">{{ $product->name }}</h4>
                         <table class="table">
                             <thead>
                                 <tr>
@@ -37,9 +38,8 @@
                                     <td>{{ $product->tire_per }} pcs</td>
                                     <td>タイヤ</td>
                                 </tr>
-
                             </tbody>
-                            </table>
+                        </table>
 
                     </div>
                 </div>

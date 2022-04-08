@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class MaterialSupplierSeeder extends Seeder
+class SupplierSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,6 +18,6 @@ class MaterialSupplierSeeder extends Seeder
             ['name' => 'Symfonyタイヤ'],
         ];
 
-        DB::table('material_suppliers')->insert($suppliers);
+        DB::table('suppliers')->insert($suppliers);
     }
 }

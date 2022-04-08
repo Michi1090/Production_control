@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class MaterialMaster extends Model
+class Material extends Model
 {
     // 各部品のIDを定数に格納
     const ENGINE_3000 = 1;
