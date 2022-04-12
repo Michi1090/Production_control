@@ -18,7 +18,7 @@ class Product extends Model
         return $this->belongsTo('App\Material', 'airbag_id');
     }
 
-    // タイヤバッグのリレーション
+    // タイヤのリレーション
     public function tire()
     {
         return $this->belongsTo('App\Material', 'tire_id');
