@@ -228,4 +228,6 @@ return [
 
     ],
 
+    // SQLログを出力するための設定
+    'sql_debug' => env('SQL_DEBUG', false),
 ];
