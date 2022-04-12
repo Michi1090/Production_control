@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+                <!-- カードヘッダー -->
                 <div class="card-header text-center">製品マスタ照会</div>
                     <div class="card-body">
-
                         <!-- 製品マスタ画面 -->
                         <h4 class="text-center my-3">{{ $product->name }}</h4>
-                        <table class="table">
+                        <table class="table mb-4">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -40,7 +40,9 @@
                                 </tr>
                             </tbody>
                         </table>
-
+                        <div class="text-center">
+                            <a class="btn btn-secondary px-4 text-center" href="{{ route('product_search') }}">戻る</a>
+                        </div>
                     </div>
                 </div>
             </div>
