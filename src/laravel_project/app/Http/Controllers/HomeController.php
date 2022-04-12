@@ -14,14 +14,14 @@ class HomeController extends Controller
     public function index()
     {
         $menus = [
-            ['title' => '生産登録', 'url' => 'home'],
-            ['title' => '出荷登録', 'url' => 'home'],
-            ['title' => '在庫照会', 'url' => 'home'],
-            ['title' => '部品発注', 'url' => 'home'],
-            ['title' => '製品マスタ照会', 'url' => 'product_search'],
-            ['title' => '部品マスタ照会', 'url' => 'home'],
-            ['title' => 'ユーザー情報照会・変更', 'url' => 'home'],
-            ['title' => '操作マニュアル', 'url' => 'home'],
+            ['title' => '生産登録', 'url' => '#'],
+            ['title' => '出荷登録', 'url' => '#'],
+            ['title' => '在庫照会', 'url' => '#'],
+            ['title' => '部品発注', 'url' => '#'],
+            ['title' => '製品マスタ照会', 'url' => '#'],
+            ['title' => '部品マスタ照会', 'url' => '#'],
+            ['title' => 'ユーザー情報照会・変更', 'url' => '#'],
+            ['title' => '操作マニュアル', 'url' => '#'],
         ];
 
         return view('home', ['menus' => $menus]);

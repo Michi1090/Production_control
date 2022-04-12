@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class UserSeeder extends Seeder
+class UsersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $users = [
+        $params = [
             [
                 'name' => 'test1',
                 'email' => 'test1@gmail.com',
@@ -76,6 +76,6 @@ class UserSeeder extends Seeder
             ],
         ];
 
-        DB::table('users')->insert($users);
+        DB::table('users')->insert($params);
     }
 }
