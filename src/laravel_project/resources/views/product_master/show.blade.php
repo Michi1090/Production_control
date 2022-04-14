@@ -9,7 +9,7 @@
                 <div class="card-header text-center">製品マスタ照会</div>
                     <div class="card-body">
                         <!-- 製品マスタ画面 -->
-                        <h4 class="text-center my-3">{{ $product->name }}</h4>
+                        <h4 class="text-center my-4">{{ $product->name }}</h4>
                         <table class="table mb-4">
                             <thead>
                                 <tr>
@@ -32,7 +32,7 @@
                                     <td>{{ $product->airbag_per }} pcs</td>
                                     <td>エアバッグ</td>
                                 </tr>
-                                <tr>
+                                <tr class="border-bottom">
                                     <th scope="row">3</th>
                                     <td>{{ $product->tire->name }}</td>
                                     <td>{{ $product->tire_per }} pcs</td>

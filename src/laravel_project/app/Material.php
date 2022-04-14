@@ -16,4 +16,16 @@ class Material extends Model
     const TIRE_17 = 7;
     const TIRE_15 = 8;
     const TIRE_14 = 9;
+
+    // 種別のリレーション
+    public function type()
+    {
+        return $this->belongsTo('App\MaterialType');
+    }
+
+    // 種別のリレーション
+    public function supplier()
+    {
+        return $this->belongsTo('App\Supplier');
+    }
 }
