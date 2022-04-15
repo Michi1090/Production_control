@@ -23,7 +23,7 @@ class Material extends Model
         return $this->belongsTo('App\MaterialType');
     }
 
-    // 種別のリレーション
+    // サプライヤーのリレーション
     public function supplier()
     {
         return $this->belongsTo('App\Supplier');
