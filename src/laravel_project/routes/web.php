@@ -22,4 +22,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // 製品マスタ照会
     Route::get('product_search', 'ProductMasterController@search')->name('product_search');
     Route::get('product_master', 'ProductMasterController@show')->name('product_master');
+
+    // 部品マスタ照会
+    Route::get('material_search', 'MaterialMasterController@search')->name('material_search');
+    Route::get('material_master', 'MaterialMasterController@show')->name('material_master');
 });
