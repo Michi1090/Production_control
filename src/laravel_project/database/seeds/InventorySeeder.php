@@ -3,9 +3,9 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory;
-use App\Production;
+use App\Inventory;
 
-class ProductionSeeder extends Seeder
+class InventorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,14 +14,14 @@ class ProductionSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('productions')->delete();
+        DB::table('inventories')->delete();
         $faker = Factory::create('ja_JP');
 
-        for ($i = 0; $i < 30; $i++) {
-            Production::create([
+        for ($i = 0; $i < 50; $i++) {
+            Inventory::create([
                 'product_id' => $faker->numberBetween(1, 5),
                 'date' => $faker->dateTimeBetween('now', '+2 week'),
-                'quantity' => $faker->numberBetween(1, 30),
+                'quantity' => $faker->regexify('-?[1-9]'),
                 'create_user' => $faker->numberBetween(1, 10),
             ]);
         }

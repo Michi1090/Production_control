@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProductionsTable extends Migration
+class CreateInventoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateProductionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('productions', function (Blueprint $table) {
+        Schema::create('inventories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id');
             $table->date('date');
-            $table->unsignedBigInteger('quantity');
+            $table->bigInteger('quantity');
             $table->unsignedBigInteger('create_user');
             $table->unsignedBigInteger('update_user')->nullable();
             $table->timestamps();
@@ -36,6 +36,6 @@ class CreateProductionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('productions');
+        Schema::dropIfExists('inventories');
     }
 }
