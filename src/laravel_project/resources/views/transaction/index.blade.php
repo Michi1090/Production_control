@@ -6,54 +6,36 @@
         <div class="col-md-8">
             <div class="card">
                 <!-- カードヘッダー -->
-                <div class="card-header text-center">製品マスタ照会</div>
+                <div class="card-header text-center">入出庫明細</div>
                     <div class="card-body">
                         <!-- 製品マスタ画面 -->
-                        <h4 class="text-center my-4">{{ $product->name }}</h4>
                         <table class="table mb-4">
+                        {{-- <h4 class="text-center my-4">{{ $transactions->product->name }}</h4> --}}
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">部品名称</th>
-                                    <th scope="col">員数</th>
-                                    <th scope="col">種別</th>
+                                    <th scope="col">ロットID</th>
+                                    <th scope="col">車種</th>
+                                    <th scope="col">日付</th>
+                                    <th scope="col">入出庫</th>
+                                    <th scope="col">数量</th>
+                                    <th scope="col">在庫</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($transactions as $transaction)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>
-                                        <a href="{{ route('material_master', ['id' => $product->engine_id]) }}" target="_blank">
-                                            {{ $product->engine->name }}
-                                        </a>
-                                    </td>
-                                    <td>{{ $product->engine_per }} pcs</td>
-                                    <td>エンジン</td>
+                                    <td>{{ sprintf('%04d', $transaction->id) }}</td>
+                                    <td>{{ $transaction->product->name }}</td>
+                                    <td>{{ $transaction->date }}</td>
+                                    <td>{{ $transaction->quantity > 0 ? '入庫' : '出庫' }}</td>
+                                    <td>{{ $transaction->quantity }} pcs</td>
+                                    <td>### pcs</td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>
-                                        <a href="{{ route('material_master', ['id' => $product->airbag_id]) }}" target="_blank">
-                                            {{ $product->airbag->name }}
-                                        </a>
-                                    </td>
-                                    <td>{{ $product->airbag_per }} pcs</td>
-                                    <td>エアバッグ</td>
-                                </tr>
-                                <tr class="border-bottom">
-                                    <th scope="row">3</th>
-                                    <td>
-                                        <a href="{{ route('material_master', ['id' => $product->tire_id]) }}" target="_blank">
-                                            {{ $product->tire->name }}
-                                        </a>
-                                    </td>
-                                    <td>{{ $product->tire_per }} pcs</td>
-                                    <td>タイヤ</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         <div class="text-center">
-                            <a class="btn btn-secondary px-4 text-center" href="{{ route('product_search') }}">戻る</a>
+                            <a class="btn btn-secondary px-4 text-center" href="{{ route('home') }}">ホームメニュー</a>
                         </div>
                     </div>
                 </div>
