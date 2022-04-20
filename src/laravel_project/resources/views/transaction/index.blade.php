@@ -30,9 +30,21 @@
                                     <td>{{ sprintf('%04d', $transaction->id) }}</td>
                                     <td>{{ $transaction->product->name }}</td>
                                     <td>{{ $transaction->date }}</td>
-                                    <td>{{ $transaction->quantity > 0 ? '入庫' : '出庫' }}</td>
+
+                                    @if ($transaction->quantity > 0)
+                                    <td>入庫</td>
                                     <td>{{ $transaction->quantity }}</td>
+                                    @else
+                                    <td class="text-danger">出庫</td>
+                                    <td class="text-danger">{{ $transaction->quantity }}</td>
+                                    @endif
+
+                                    @if ($inventory >= 0)
                                     <td>{{ $inventory }}</td>
+                                    @else
+                                    <td class="text-danger">{{ $inventory }}</td>
+                                    @endif
+
                                 </tr>
                                 @endforeach
                             </tbody>
