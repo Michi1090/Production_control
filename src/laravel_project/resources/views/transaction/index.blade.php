@@ -10,7 +10,6 @@
                     <div class="card-body">
                         <!-- 製品マスタ画面 -->
                         <table class="table mb-4">
-                        {{-- <h4 class="text-center my-4">{{ $transactions->product->name }}</h4> --}}
                             <thead>
                                 <tr>
                                     <th scope="col">ロットID</th>
@@ -23,13 +22,17 @@
                             </thead>
                             <tbody>
                                 @foreach ($transactions as $transaction)
+                                    @php
+                                    // 在庫数の計算
+                                    $inventory += $transaction->quantity
+                                    @endphp
                                 <tr>
                                     <td>{{ sprintf('%04d', $transaction->id) }}</td>
                                     <td>{{ $transaction->product->name }}</td>
                                     <td>{{ $transaction->date }}</td>
                                     <td>{{ $transaction->quantity > 0 ? '入庫' : '出庫' }}</td>
-                                    <td>{{ $transaction->quantity }} pcs</td>
-                                    <td>### pcs</td>
+                                    <td>{{ $transaction->quantity }}</td>
+                                    <td>{{ $inventory }}</td>
                                 </tr>
                                 @endforeach
                             </tbody>
