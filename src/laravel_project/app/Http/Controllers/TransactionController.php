@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Transaction;
+use App\Inventory;
 
 class TransactionController extends Controller
 {
@@ -21,7 +22,7 @@ class TransactionController extends Controller
     {
         $productId = $request->input('product_id');
         $transactions = Transaction::where('product_id', $productId)->orderByRaw('date ASC, quantity DESC')->get();
-        $inventory = 0; //在庫の初期値
+        $inventory = Inventory::findOrFail($productId);
         $params = ['transactions' => $transactions, 'inventory' => $inventory];
 
         return view('transaction.index', $params);
