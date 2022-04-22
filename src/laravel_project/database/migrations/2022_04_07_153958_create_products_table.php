@@ -22,6 +22,11 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('airbag_per');
             $table->unsignedBigInteger('tire_id');
             $table->unsignedBigInteger('tire_per');
+
+            // 外部キー制約
+            $table->foreign('engine_id')->references('id')->on('materials');
+            $table->foreign('airbag_id')->references('id')->on('materials');
+            $table->foreign('tire_id')->references('id')->on('materials');
         });
     }
 
