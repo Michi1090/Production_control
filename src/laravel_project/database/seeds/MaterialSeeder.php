@@ -14,6 +14,8 @@ class MaterialSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('materials')->delete();
+
         $materials = [
             [
                 'name' => 'エンジン 3000cc',

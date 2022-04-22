@@ -12,6 +12,8 @@ class SupplierSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('suppliers')->delete();
+
         $suppliers = [
             ['name' => 'PHP発動機'],
             ['name' => 'Laravel工業'],

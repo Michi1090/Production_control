@@ -12,6 +12,8 @@ class MaterialTypeSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('material_types')->delete();
+
         $types = [
             ['name' => 'エンジン'],
             ['name' => 'エアバッグ'],

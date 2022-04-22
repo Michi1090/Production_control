@@ -13,6 +13,8 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('products')->delete();
+
         $products = [
             [
                 'name' => 'セダン',
