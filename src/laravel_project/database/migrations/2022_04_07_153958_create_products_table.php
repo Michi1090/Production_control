@@ -16,12 +16,17 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->bigInteger('engine_id');
-            $table->bigInteger('engine_per');
-            $table->bigInteger('airbag_id');
-            $table->bigInteger('airbag_per');
-            $table->bigInteger('tire_id');
-            $table->bigInteger('tire_per');
+            $table->unsignedBigInteger('engine_id');
+            $table->unsignedBigInteger('engine_per');
+            $table->unsignedBigInteger('airbag_id');
+            $table->unsignedBigInteger('airbag_per');
+            $table->unsignedBigInteger('tire_id');
+            $table->unsignedBigInteger('tire_per');
+
+            // 外部キー制約
+            $table->foreign('engine_id')->references('id')->on('materials');
+            $table->foreign('airbag_id')->references('id')->on('materials');
+            $table->foreign('tire_id')->references('id')->on('materials');
         });
     }
 
