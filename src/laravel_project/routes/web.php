@@ -19,6 +19,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ホームメニュー
     Route::get('/', 'HomeController@index')->name('home');
 
+    // 生産・出荷登録
+    Route::get('transaction/search', 'TransactionController@search')->name('transaction.search');
+    Route::get('transaction', 'TransactionController@index')->name('transaction');
+
     // 製品マスタ照会
     Route::get('product_search', 'ProductMasterController@search')->name('product_search');
     Route::get('product_master', 'ProductMasterController@show')->name('product_master');

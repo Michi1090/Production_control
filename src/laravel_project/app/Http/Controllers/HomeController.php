@@ -14,8 +14,8 @@ class HomeController extends Controller
     public function index()
     {
         $menus = [
-            ['title' => '生産登録', 'url' => 'home'],
-            ['title' => '出荷登録', 'url' => 'home'],
+            ['title' => '入出庫明細 / 登録', 'url' => 'transaction.search'],
+            ['title' => '検収処理', 'url' => 'home'],
             ['title' => '在庫照会', 'url' => 'home'],
             ['title' => '部品発注', 'url' => 'home'],
             ['title' => '製品マスタ照会', 'url' => 'product_search'],
