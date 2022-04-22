@@ -13,6 +13,8 @@ class InventorySeeder extends Seeder
      */
     public function run()
     {
+        DB::table('inventories')->delete();
+
         $inventories = [
             [
                 'product_id' => Product::SEDAN,
