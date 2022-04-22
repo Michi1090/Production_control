@@ -20,13 +20,20 @@ class TransactionController extends Controller
     // 一覧画面
     public function index(Request $request)
     {
-        $productId = $request->input('product_id');
+        $productId = (int)$request->input('product_id');
+        $products = Product::all();
         $transactions = Transaction::with('product')
                                     ->where('product_id', $productId)
                                     ->orderByRaw('date ASC, quantity DESC')
                                     ->get();
         $inventory = Inventory::findOrFail($productId);
-        $params = ['transactions' => $transactions, 'inventory' => $inventory];
+
+        $params = [
+            'productId' => $productId,
+            'products' => $products,
+            'transactions' => $transactions,
+            'inventory' => $inventory,
+        ];
 
         return view('transaction.index', $params);
     }

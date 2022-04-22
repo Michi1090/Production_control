@@ -8,8 +8,27 @@
                 <!-- カードヘッダー -->
                 <div class="card-header text-center">入出庫明細</div>
                     <div class="card-body">
-                        <!-- 製品マスタ画面 -->
-                        <table class="table mb-4">
+                        <!-- 検索フォーム -->
+                        <form method="get" action="{{ route('transaction') }}">
+                            <div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 col-form-label text-md-right" for="product">製品名</label>
+                                    <div class="col-md-4">
+                                        <select class="form-control" id="product" name="product_id">
+                                            @foreach ($products as $product)
+                                            <option {{ $product->id === $productId ? 'selected' : '' }} value="{{ $product->id }}">{{ $product->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-primary px-4 mr-2" type="submit">検索</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- 入出庫明細画面 -->
+                        <table class="table my-4">
                             <thead>
                                 <tr>
                                     <th scope="col">日付</th>
@@ -21,7 +40,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- 現在庫の表示 --}}
+                                <!-- 現在庫の表示 -->
                                 <tr class="font-weight-bold">
                                     <td>{{ date('Y-m-d')}}</td>
                                     <td>現在庫</td>
@@ -31,7 +50,7 @@
                                     <td>{{ $inventory->quantity }}</td>
                                 </tr>
 
-                                {{-- 本日以降の入出庫明細表示 --}}
+                                <!-- 本日以降の入出庫明細表示 -->
                                 @foreach ($transactions as $transaction)
 
                                 @php
@@ -39,7 +58,7 @@
                                 $inventory->quantity += $transaction->quantity
                                 @endphp
 
-                                <tr>
+                                <tr class="border-bottom">
                                     <td>{{ $transaction->date }}</td>
                                     <td>{{ sprintf('%04d', $transaction->id) }}</td>
                                     <td>{{ $transaction->product->name }}</td>
