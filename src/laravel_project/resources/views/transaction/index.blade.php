@@ -20,7 +20,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <button class="btn btn-primary px-4 mr-2" type="submit">検索</button>
                                     </div>
                                 </div>

@@ -8,8 +8,27 @@
                 <!-- カードヘッダー -->
                 <div class="card-header text-center">製品マスタ照会</div>
                     <div class="card-body">
+                        <!-- 検索フォーム -->
+                        <form method="get" action="{{ route('product.master') }}">
+                            <div>
+                                <div class="form-group row">
+                                    <label class="col-md-2 col-form-label text-md-right" for="product">製品名</label>
+                                    <div class="col-md-4">
+                                        <select class="form-control" id="product" name="id">
+                                            @foreach ($products as $product)
+                                            <option {{ $product->id === $id ? 'selected' : '' }} value="{{ $product->id }}">{{ $product->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary px-4 mr-2" type="submit">検索</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
                         <!-- 製品マスタ画面 -->
-                        <h4 class="text-center my-4">{{ $product->name }}</h4>
+                        <h4 class="text-center my-4">{{ $master->name }}</h4>
                         <table class="table mb-4">
                             <thead>
                                 <tr>
@@ -20,34 +39,39 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- エンジン -->
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>
-                                        <a href="{{ route('material.master', ['id' => $product->engine_id]) }}" target="_blank">
-                                            {{ $product->engine->name }}
+                                        <a href="{{ route('material.master', ['id' => $master->engine_id]) }}" target="_blank">
+                                            {{ $master->engine->name }}
                                         </a>
                                     </td>
-                                    <td>{{ $product->engine_per }} pcs</td>
+                                    <td>{{ $master->engine_per }} pcs</td>
                                     <td>エンジン</td>
                                 </tr>
+
+                                <!-- エアバッグ -->
                                 <tr>
                                     <th scope="row">2</th>
                                     <td>
-                                        <a href="{{ route('material.master', ['id' => $product->airbag_id]) }}" target="_blank">
-                                            {{ $product->airbag->name }}
+                                        <a href="{{ route('material.master', ['id' => $master->airbag_id]) }}" target="_blank">
+                                            {{ $master->airbag->name }}
                                         </a>
                                     </td>
-                                    <td>{{ $product->airbag_per }} pcs</td>
+                                    <td>{{ $master->airbag_per }} pcs</td>
                                     <td>エアバッグ</td>
                                 </tr>
+
+                                <!-- タイヤ -->
                                 <tr class="border-bottom">
                                     <th scope="row">3</th>
                                     <td>
-                                        <a href="{{ route('material.master', ['id' => $product->tire_id]) }}" target="_blank">
-                                            {{ $product->tire->name }}
+                                        <a href="{{ route('material.master', ['id' => $master->tire_id]) }}" target="_blank">
+                                            {{ $master->tire->name }}
                                         </a>
                                     </td>
-                                    <td>{{ $product->tire_per }} pcs</td>
+                                    <td>{{ $master->tire_per }} pcs</td>
                                     <td>タイヤ</td>
                                 </tr>
                             </tbody>

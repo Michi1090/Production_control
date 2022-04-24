@@ -20,8 +20,8 @@ class TransactionController extends Controller
     // 一覧画面
     public function index(Request $request)
     {
-        $productId = (int)$request->input('product_id');
         $products = Product::all();
+        $productId = (int)$request->input('product_id');
         $transactions = Transaction::with('product')
                                     ->where('product_id', $productId)
                                     ->orderByRaw('date ASC, quantity DESC')
@@ -29,8 +29,8 @@ class TransactionController extends Controller
         $inventory = Inventory::findOrFail($productId);
 
         $params = [
-            'productId' => $productId,
             'products' => $products,
+            'productId' => $productId,
             'transactions' => $transactions,
             'inventory' => $inventory,
         ];
