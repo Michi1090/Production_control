@@ -13,7 +13,7 @@
                             <div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label text-md-right" for="product">製品名</label>
-                                    <div class="col-md-4">
+                                    <div class="col-md-5">
                                         <select class="form-control" id="product" name="id">
                                             @foreach ($products as $product)
                                             <option {{ $product->id === $id ? 'selected' : '' }} value="{{ $product->id }}">{{ $product->name }}</option>
@@ -28,7 +28,7 @@
                         </form>
 
                         <!-- 製品マスタ画面 -->
-                        <h4 class="text-center my-4">{{ $master->name }}</h4>
+                        <h4 class="text-center mt-5 mb-4">{{ $master->name }}</h4>
                         <table class="table mb-4">
                             <thead>
                                 <tr>

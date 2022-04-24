@@ -18,10 +18,17 @@ class MaterialMasterController extends Controller
     // 照会画面
     public function show(Request $request)
     {
-        $id = $request->input('id');
-        $material = Material::findOrFail($id);
+        $materials = Material::all();
+        $id = (int)$request->input('id');
+        $master = Material::findOrFail($id);
 
-        return view('material.master', ['material' => $material]);
+        $params = [
+            'materials' => $materials,
+            'id' => $id,
+            'master' => $master,
+        ];
+
+        return view('material.master', $params);
     }
 
 }
