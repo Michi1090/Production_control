@@ -80,6 +80,8 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        <!-- ホームへ戻るボタン -->
                         <div class="text-center">
                             <a class="btn btn-secondary px-4 text-center" href="{{ route('home') }}">ホームメニュー</a>
                         </div>
