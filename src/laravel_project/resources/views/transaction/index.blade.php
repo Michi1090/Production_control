@@ -9,7 +9,7 @@
                 <div class="card-header text-center">入出庫明細</div>
                     <div class="card-body">
                         <!-- 検索フォーム -->
-                        <form method="get" action="{{ route('transaction') }}">
+                        <form method="get" action="{{ route('transaction.index') }}">
                             <div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label text-md-right" for="product">製品名</label>

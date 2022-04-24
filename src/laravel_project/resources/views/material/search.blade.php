@@ -9,7 +9,7 @@
                 <div class="card-header text-center">部品マスタ検索</div>
                     <div class="card-body">
                         <!-- 検索画面 -->
-                        <form method="get" action="{{ route('material_master') }}">
+                        <form method="get" action="{{ route('material.master') }}">
                             <div class="form-group row">
                                 <label class="col-md-4 col-form-label text-md-right" for="material">部品名</label>
                                 <div class="col-md-6">

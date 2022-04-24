@@ -12,16 +12,16 @@ class MaterialMasterController extends Controller
     {
         $materials = Material::all();
 
-        return view('material_master.search', ['materials' => $materials]);
+        return view('material.search', ['materials' => $materials]);
     }
-    
+
     // 照会画面
     public function show(Request $request)
     {
         $id = $request->input('id');
         $material = Material::findOrFail($id);
 
-        return view('material_master.show', ['material' => $material]);
+        return view('material.master', ['material' => $material]);
     }
 
 }

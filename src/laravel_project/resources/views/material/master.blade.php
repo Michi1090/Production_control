@@ -27,7 +27,7 @@
                             </tbody>
                         </table>
                         <div class="text-center">
-                            <a class="btn btn-secondary px-4 text-center" href="{{ route('material_search') }}">戻る</a>
+                            <a class="btn btn-secondary px-4 text-center" href="{{ route('material.search') }}">戻る</a>
                         </div>
                     </div>
                 </div>

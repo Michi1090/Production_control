@@ -23,7 +23,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>
-                                        <a href="{{ route('material_master', ['id' => $product->engine_id]) }}" target="_blank">
+                                        <a href="{{ route('material.master', ['id' => $product->engine_id]) }}" target="_blank">
                                             {{ $product->engine->name }}
                                         </a>
                                     </td>
@@ -33,7 +33,7 @@
                                 <tr>
                                     <th scope="row">2</th>
                                     <td>
-                                        <a href="{{ route('material_master', ['id' => $product->airbag_id]) }}" target="_blank">
+                                        <a href="{{ route('material.master', ['id' => $product->airbag_id]) }}" target="_blank">
                                             {{ $product->airbag->name }}
                                         </a>
                                     </td>
@@ -43,7 +43,7 @@
                                 <tr class="border-bottom">
                                     <th scope="row">3</th>
                                     <td>
-                                        <a href="{{ route('material_master', ['id' => $product->tire_id]) }}" target="_blank">
+                                        <a href="{{ route('material.master', ['id' => $product->tire_id]) }}" target="_blank">
                                             {{ $product->tire->name }}
                                         </a>
                                     </td>
@@ -53,7 +53,7 @@
                             </tbody>
                         </table>
                         <div class="text-center">
-                            <a class="btn btn-secondary px-4 text-center" href="{{ route('product_search') }}">戻る</a>
+                            <a class="btn btn-secondary px-4 text-center" href="{{ route('product.search') }}">戻る</a>
                         </div>
                     </div>
                 </div>

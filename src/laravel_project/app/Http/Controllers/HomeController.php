@@ -18,8 +18,8 @@ class HomeController extends Controller
             ['title' => '検収処理', 'url' => 'home'],
             ['title' => '在庫照会', 'url' => 'home'],
             ['title' => '部品発注', 'url' => 'home'],
-            ['title' => '製品マスタ照会', 'url' => 'product_search'],
-            ['title' => '部品マスタ照会', 'url' => 'material_search'],
+            ['title' => '製品マスタ照会', 'url' => 'product.search'],
+            ['title' => '部品マスタ照会', 'url' => 'material.search'],
             ['title' => 'ユーザー情報照会・変更', 'url' => 'home'],
             ['title' => '操作マニュアル', 'url' => 'home'],
         ];
