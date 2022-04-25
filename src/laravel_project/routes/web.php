@@ -19,15 +19,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // ホームメニュー
     Route::get('/', 'HomeController@index')->name('home');
 
-    // 生産・出荷登録
+    // 入出庫明細 / 登録
     Route::get('transaction/search', 'TransactionController@search')->name('transaction.search');
-    Route::get('transaction', 'TransactionController@index')->name('transaction');
+    Route::get('transaction/index', 'TransactionController@index')->name('transaction.index');
 
     // 製品マスタ照会
-    Route::get('product_search', 'ProductMasterController@search')->name('product_search');
-    Route::get('product_master', 'ProductMasterController@show')->name('product_master');
+    Route::get('product/search', 'ProductMasterController@search')->name('product.search');
+    Route::get('product/master', 'ProductMasterController@show')->name('product.master');
 
     // 部品マスタ照会
-    Route::get('material_search', 'MaterialMasterController@search')->name('material_search');
-    Route::get('material_master', 'MaterialMasterController@show')->name('material_master');
+    Route::get('material/search', 'MaterialMasterController@search')->name('material.search');
+    Route::get('material/master', 'MaterialMasterController@show')->name('material.master');
 });

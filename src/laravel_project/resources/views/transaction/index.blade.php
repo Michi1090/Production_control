@@ -9,7 +9,7 @@
                 <div class="card-header text-center">入出庫明細</div>
                     <div class="card-body">
                         <!-- 検索フォーム -->
-                        <form method="get" action="{{ route('transaction') }}">
+                        <form method="get" action="{{ route('transaction.index') }}">
                             <div>
                                 <div class="form-group row">
                                     <label class="col-md-2 col-form-label text-md-right" for="product">製品名</label>
@@ -20,7 +20,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-3">
                                         <button class="btn btn-primary px-4 mr-2" type="submit">検索</button>
                                     </div>
                                 </div>
@@ -80,6 +80,8 @@
                                 @endforeach
                             </tbody>
                         </table>
+
+                        <!-- ホームへ戻るボタン -->
                         <div class="text-center">
                             <a class="btn btn-secondary px-4 text-center" href="{{ route('home') }}">ホームメニュー</a>
                         </div>

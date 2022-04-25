@@ -12,15 +12,22 @@ class ProductMasterController extends Controller
     {
         $products = Product::all();
 
-        return view('product_master.search', ['products' => $products]);
+        return view('product.search', ['products' => $products]);
     }
 
     // 照会画面
     public function show(Request $request)
     {
-        $id = $request->input('id');
-        $product = Product::findOrFail($id);
+        $products = Product::all();
+        $id = (int)$request->input('id');
+        $master = Product::findOrFail($id);
 
-        return view('product_master.show', ['product' => $product]);
+        $params = [
+            'products' => $products,
+            'id' => $id,
+            'master' => $master,
+        ];
+
+        return view('product.master', $params);
     }
 }

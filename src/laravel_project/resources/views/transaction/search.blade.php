@@ -9,7 +9,7 @@
                 <div class="card-header text-center">入出庫明細 / 登録</div>
                     <div class="card-body">
                         <!-- 検索フォーム -->
-                        <form method="get" action="{{ route('transaction') }}">
+                        <form method="get" action="{{ route('transaction.index') }}">
                             <div>
                                 <p class="text-center">データを登録・照会したい製品を選択してください</p>
                                 <div class="form-group row">
